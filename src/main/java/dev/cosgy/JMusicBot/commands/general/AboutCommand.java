@@ -36,7 +36,7 @@ import java.awt.*;
         name = "About",
         description = "ボットに関する情報を表示します"
 )
-@Author("Cosgy Dev")
+@Author("FelNull")
 public class AboutCommand extends Command {
     private final Color color;
     private final String description;
@@ -80,10 +80,10 @@ public class AboutCommand extends Command {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setColor(event.getGuild() == null ? color : event.getGuild().getSelfMember().getColor());
         builder.setAuthor("" + event.getSelfUser().getName() + "について!", null, event.getSelfUser().getAvatarUrl());
-        String CosgyOwner = "Cosgy Devが運営、開発をしています。";
+        String CosgyOwner = "FelNullが運営、開発をしています。";
         /*boolean join = !(event.getClient().getServerInvite() == null || event.getClient().getServerInvite().isEmpty());
         boolean inv = !oauthLink.isEmpty();
-        String invline = "\n"+ (join ? "Cosgy Dev公式チャンネル [`こちら`](https://discord.gg/RBpkHxf)" : (inv ? "へお願いします。 " : ""));
+        String invline = "\n"+ (join ? "FelNull公式チャンネル [`こちら`](https://discord.gg/X9BUF9A)" : (inv ? "へお願いします。 " : ""));
                 + (inv ? (join ? ", または " : "") + "あなたのサーバーに[`招待リンク`](" + oauthLink + ") " : "で招待することができます。") + "!"*/
         String author = event.getJDA().getUserById(event.getClient().getOwnerId()) == null ? "<@" + event.getClient().getOwnerId() + ">"
                 : event.getJDA().getUserById(event.getClient().getOwnerId()).getName();
@@ -91,7 +91,7 @@ public class AboutCommand extends Command {
                 .append(description).append("は、").append(JDAUtilitiesInfo.AUTHOR + "の[コマンド拡張](" + JDAUtilitiesInfo.GITHUB + ") (")
                 .append(JDAUtilitiesInfo.VERSION).append(")と[JDAライブラリ](https://github.com/DV8FromTheWorld/JDA) (")
                 .append(JDAInfo.VERSION).append(")を使用しており、").append((IS_AUTHOR ? CosgyOwner : author + "が所有しています。"))
-                .append(event.getSelfUser().getName()).append("についての質問などは[Cosgy Dev公式チャンネル](https://discord.gg/RBpkHxf)へお願いします。")
+                .append(event.getSelfUser().getName()).append("についての質問などは[FelNull公式チャンネル](https://discord.gg/X9BUF9A)へお願いします。")
                 .append("\nこのボットの使用方法は`").append(event.getClient().getTextualPrefix()).append(event.getClient().getHelpWord())
                 .append("`で確認することができます。").append("\n\n機能の特徴： ```css");
         for (String feature : features)
